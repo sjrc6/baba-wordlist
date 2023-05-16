@@ -30,19 +30,36 @@
     * {
       box-sizing: border-box;
     }
+    .lcolumn {
+      background-color: #000000;
+      color: #ce3c6c;
+      font-family: sans-serif;
+      text-align: center;
+      float: left;
+      width: 27.5%;
+      @media only screen and (max-width: 870px) {
+        width: 12.5%;
 
-    /* Create three equal columns that floats next to each other */
+    }
+
+      padding: 10px;
+    }
+
     .column {
       background-color: #000000;
       color: #ce3c6c;
       font-family: sans-serif;
       text-align: center;
       float: left;
-      width: 20%;
+      width: 15%;
+      @media only screen and (max-width: 870px) {
+        width: 25%;
+
+    }
+
       padding: 10px;
     }
 
-    /* Clear floats after the columns */
     .row:after {
       content: "";
       display: table;
@@ -65,18 +82,18 @@
 
     </div>
     <div class="row">
-      <div class="column" style="background-color:#000000;">
+      <div class="lcolumn" style="background-color:#000000;">
       </div>
       <div class="column">
-        <h2>NOUNS</h2>
+        <h3>NOUNS</h3>
         <p id="NOUNS"></p>
       </div>
       <div class="column" >
-        <h2>OPERATORS</h2>
+        <h3>OPERATORS</h3>
         <p id="OPERATORS"></p>
       </div>
       <div class="column">
-        <h2>PROPERTIES</h2>
+        <h3>PROPERTIES</h3>
         <p id="PROPERTIES"></p>
       </div>
 
