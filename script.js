@@ -33,8 +33,12 @@ function get(url) {
    });
  }
 
-var wordListURL = 'https://raw.githubusercontent.com/sjrc6/babawordlist-test/main/wordlist.txt';
-var wordListRequest = get(wordListURL)
+var NounListURL = 'https://raw.githubusercontent.com/sjrc6/babawordlist-test/main/nouns-list.txt';
+var NounListRequest = get(NounListURL)
+var OperatorListURL = 'https://raw.githubusercontent.com/sjrc6/babawordlist-test/main/operators-list.txt';
+var OperatorListRequest = get(OperatorListURL)
+var PropertieListURL = 'https://raw.githubusercontent.com/sjrc6/babawordlist-test/main/properties-list.txt';
+var PropertieListRequest = get(PropertieListURL)
 
 /**
   * Finds words that match conditions defined by certain
@@ -44,33 +48,65 @@ var wordListRequest = get(wordListURL)
   */
 function findWords() {
     var myLetters = document.getElementById("letters").value;
-    var startsWith = '';
-    var endsWith = '';
-    var gapLength = '';
 
     /* Make sure all inputs are lower case */
     myLetters = myLetters.toUpperCase()
-    startsWith = startsWith.toUpperCase()
-    endsWith = endsWith.toUpperCase()
     
     /* Make sure that word list has been loaded */
-    wordListRequest.then(function(response) {
+    NounListRequest.then(function(response) {
       var words = response.split(/\r?\n/);  // Split on newlines
-      var patterns = createPatterns(startsWith, endsWith, gapLength);
+      var patterns = createPatterns('', '', '');
 
       var matchingWords = words.filter(function(word){
         return checkWordPossible(word, patterns, myLetters);
       })
 
       if (matchingWords.length == 0){
-        matchingWords = ['Sorry, no words found!'];
+        matchingWords = ['No words found'];
       }
 
       html = "<p>" + matchingWords.join("</p><p>") + "</p>";
-      document.getElementById("demo").innerHTML = html;
+      document.getElementById("NOUNS").innerHTML = html;
     }, function(error) {
       console.error("Failed!", error);
     });
+
+    OperatorListRequest.then(function(response) {
+      var words = response.split(/\r?\n/);  // Split on newlines
+      var patterns = createPatterns('', '', '');
+
+      var matchingWords = words.filter(function(word){
+        return checkWordPossible(word, patterns, myLetters);
+      })
+
+      if (matchingWords.length == 0){
+        matchingWords = ['No words found'];
+      }
+
+      html = "<p>" + matchingWords.join("</p><p>") + "</p>";
+      document.getElementById("OPERATORS").innerHTML = html;
+    }, function(error) {
+      console.error("Failed!", error);
+    });
+
+    PropertieListRequest.then(function(response) {
+      var words = response.split(/\r?\n/);  // Split on newlines
+      var patterns = createPatterns('', '', '');
+
+      var matchingWords = words.filter(function(word){
+        return checkWordPossible(word, patterns, myLetters);
+      })
+
+      if (matchingWords.length == 0){
+        matchingWords = ['No words found'];
+      }
+
+      html = "<p>" + matchingWords.join("</p><p>") + "</p>";
+      document.getElementById("PROPERTIES").innerHTML = html;
+    }, function(error) {
+      console.error("Failed!", error);
+    });
+
 }
 
 /**
