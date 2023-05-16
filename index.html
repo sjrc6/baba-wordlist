@@ -30,19 +30,20 @@
     * {
       box-sizing: border-box;
     }
-    .lcolumn {
+    .rcolumn {
       background-color: #000000;
       color: #ce3c6c;
       font-family: sans-serif;
       text-align: center;
-      float: left;
+      float: right;
       width: 27.5%;
+      padding: 10px;
       @media only screen and (max-width: 870px) {
-        width: 12.5%;
-
+        width: 0%;
+        padding: 0px;
     }
 
-      padding: 10px;
+      
     }
 
     .column {
@@ -50,14 +51,12 @@
       color: #ce3c6c;
       font-family: sans-serif;
       text-align: center;
-      float: left;
+      float: right;
       width: 15%;
-      @media only screen and (max-width: 870px) {
-        width: 25%;
-
-    }
-
       padding: 10px;
+      @media only screen and (max-width: 870px) {
+        width: 33%;
+      }
     }
 
     .row:after {
@@ -82,19 +81,21 @@
 
     </div>
     <div class="row">
-      <div class="lcolumn" style="background-color:#000000;">
+    
+      <div class="rcolumn" style="background-color:#000000;">
       </div>
+ 
       <div class="column">
-        <h3>NOUNS</h3>
-        <p id="NOUNS"></p>
+        <h3>PROPERTIES</h3>
+        <p id="PROPERTIES"></p>
       </div>
       <div class="column" >
         <h3>OPERATORS</h3>
         <p id="OPERATORS"></p>
       </div>
       <div class="column">
-        <h3>PROPERTIES</h3>
-        <p id="PROPERTIES"></p>
+        <h3>NOUNS</h3>
+        <p id="NOUNS"></p>
       </div>
 
     </div>
