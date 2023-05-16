@@ -32,20 +32,15 @@ function get(url) {
      req.send();
    });
  }
-
-var NounListURL = 'https://raw.githubusercontent.com/sjrc6/babawordlist-test/main/nouns-list.txt';
+var NounListURL = 'https://sjrc6.github.io/baba-wordlist/resources/nouns-list.txt';
 var NounListRequest = get(NounListURL)
-var OperatorListURL = 'https://raw.githubusercontent.com/sjrc6/babawordlist-test/main/operators-list.txt';
+var OperatorListURL = 'https://sjrc6.github.io/baba-wordlist/resources/operators-list.txt';
 var OperatorListRequest = get(OperatorListURL)
-var PropertieListURL = 'https://raw.githubusercontent.com/sjrc6/babawordlist-test/main/properties-list.txt';
+var PropertieListURL = 'https://sjrc6.github.io/baba-wordlist/resources/properties-list.txt';
 var PropertieListRequest = get(PropertieListURL)
 
-/**
-  * Finds words that match conditions defined by certain
-  * input boxes (contain specified letters, starts with, ends with,
-  * and has gap of certain length). Then it appends these words
-  * onto the page.
-  */
+
+
 function findWords() {
     var myLetters = document.getElementById("letters").value;
 
