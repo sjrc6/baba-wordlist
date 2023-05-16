@@ -234,7 +234,7 @@ still
 locked
 stop
 swap
-teleport
+tele
 weak
 win
 word
